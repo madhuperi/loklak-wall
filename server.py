@@ -59,12 +59,13 @@ def wall(query=None):
 			tweet['user']['profile_image_url_https'] = updatedUrl
 		except:
 			pass
-	return render_template('index.html', name=q, tweets=tweets, BASE_URL=BASE_URL)
+	return render_template('index3.html', name=q, tweets=tweets, BASE_URL=BASE_URL)
 
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-	return render_template('index.html')
+	default_wall = "fossasia" # I hope you understood why this is here now.
+	return render_template('index.html', name=default_wall)
 
 if __name__ == '__main__':
     app.debug = True

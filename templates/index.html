@@ -12,8 +12,10 @@
 		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/demo.css')}}" />
 		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/component.css')}}" />
 		<script src="{{url_for('static', filename='js/modernizr.custom.js')}}"></script>
+    <script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	</head>
-	<body onload="getTweets()">
+
+	<body background = "background-image-ourtrack1.jpeg" onload="getTweets()">
 		<div class="container">
 			<div id="grid-gallery" class="grid-gallery">
         <section class="grid-wrap">
@@ -41,7 +43,7 @@
     <script>
       function getTweets() {
         $.ajax({
-          url: "{{BASE_URL}}/ajax/wall/{{name}}",
+          url: "{{BASE_URL}}/ajax/wall/{{name}}", // I put the default_wall value there because {{name}} needs a value
           dataType: "json",
           async: false,
           success: function (data) {
@@ -79,6 +81,6 @@
     <script>
       new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
     </script>
-		<script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		
 	</body>
 </html>
